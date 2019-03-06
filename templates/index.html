@@ -1,0 +1,55 @@
+<html>
+<title>License Plate Recognition</title>
+<!-- stylesheets -->
+<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+<div class="row">
+ 
+  <div class="col-md-7">
+    <h2>License Plate Recognition</h2>
+	  <h5>Upload a license plate image</h5>
+    <br>
+      <form action="" method=post enctype=multipart/form-data>
+        <input type=file name=file>
+        <input type=submit value=Upload>
+      </form>
+    <br>
+    <table class="table" id="results-table">
+        <tr>
+          <th>Image</th>
+        </tr>
+    		<tr>
+          {% block content %}{% endblock %}
+        </tr>
+        <tr>
+          <th>Prediction</th>
+          <th>Confidence (%)</th>
+        </tr>
+        <tr>
+          <td>{{P1}}</td>
+          <td>{{C1}}</td>
+        </tr>
+        <tr>
+          <td>{{P2}}</td>
+          <td>{{C2}}</td>
+        </tr>
+        <tr>
+          <td>{{P3}}</td>
+          <td>{{C3}}</td>
+        </tr>
+        <tr>
+          <td>{{P4}}</td>
+          <td>{{C4}}</td>
+        </tr>
+        <tr>
+          <td>{{P5}}</td>
+          <td>{{C5}}</td>
+        </tr>
+    </table>
+    <h6>Execution Time: {{time}} seconds</h6>
+  </div>
+ 
+</div>
+
+</html>
+ 
